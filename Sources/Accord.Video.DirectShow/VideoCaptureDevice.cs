@@ -998,6 +998,7 @@ namespace Accord.Video.DirectShow
                 {
                     this.IsRunning = false;
                     this.hasFinished.Set();
+                    this.shouldWake.Set(); // jbk: Thread signal lock 
                 }
             } while (shouldWake.WaitOne());
         }
@@ -1062,7 +1063,7 @@ namespace Accord.Video.DirectShow
                 // get video control interface of the device
                 try
                 {
-                    videoControl = (IAMVideoControl)sourceObject;
+                    videoControl = sourceObject as IAMVideoControl; // jbk: c# cast error 
                 }
                 catch
                 {
@@ -1348,14 +1349,15 @@ namespace Accord.Video.DirectShow
             // set the new format
             if (newMediaType != null)
             {
-                if (averageTimePerFrame >= 0)
-                {
-                    unsafe
-                    {
-                        VideoInfoHeader* vih = (VideoInfoHeader*)newMediaType.FormatPtr;
-                        vih->AverageTimePerFrame = averageTimePerFrame;
-                    }
-                }
+				// jbk: resolution error(1920 x 1080)
+                //if (averageTimePerFrame >= 0)
+                //{
+                //    unsafe
+                //    {
+                //        VideoInfoHeader* vih = (VideoInfoHeader*)newMediaType.FormatPtr;
+                //        vih->AverageTimePerFrame = averageTimePerFrame;
+                //    }
+                //}
 
                 streamConfig.SetFormat(newMediaType);
                 newMediaType.Dispose();
