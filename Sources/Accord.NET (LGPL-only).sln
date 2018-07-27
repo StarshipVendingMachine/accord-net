@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Math", "..\Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Tests.Statistics", "..\Unit Tests\Accord.Tests.Statistics\Accord.Tests.Statistics.csproj", "{49679C95-28CE-4D35-8F38-3D67A511A3C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Controls", "Accord.Controls.Statistics\Accord.Controls.csproj", "{0AB27A20-925C-4556-9FA4-6E2C109E448E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Controls", "Accord.Controls\Accord.Controls.csproj", "{0AB27A20-925C-4556-9FA4-6E2C109E448E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accord.Imaging", "Accord.Imaging\Accord.Imaging.csproj", "{4959A83D-F78F-439E-80A5-41583ECEAAC6}"
 EndProject
